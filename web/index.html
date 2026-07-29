@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Codex Quota Ring：Windows 10/11 本地 Codex 额度环，支持贴边收起、系统托盘和多显示器。"
+    />
+    <meta name="theme-color" content="#091311" />
+    <title>Codex Quota Ring — Windows 本地额度环</title>
+    <link rel="icon" href="./mark.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Codex Quota Ring 首页">
+        <img src="./mark.svg" alt="" width="32" height="32" />
+        <span>Codex Quota Ring</span>
+      </a>
+      <nav aria-label="页面导航">
+        <a href="#features">功能</a>
+        <a href="#privacy">隐私</a>
+        <a data-github-link href="#">GitHub</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="version-pill"><span></span> v0.3.1 · Windows 10/11 x64</div>
+          <h1>把 Codex 额度<br /><em>留在桌面边缘。</em></h1>
+          <p class="lead">
+            本地、只读、轻量的 Windows 额度悬浮环。随时查看 5 小时与周额度，
+            不打断当前工作。
+          </p>
+          <div class="hero-actions">
+            <a class="primary-button" data-download-link href="#">
+              下载 Windows 安装包
+              <span aria-hidden="true">↓</span>
+            </a>
+            <a class="secondary-button" data-github-link href="#">查看源代码 ↗</a>
+          </div>
+          <p class="download-note">NSIS x64 安装包 · 无遥测 · 数据只在本机读取</p>
+        </div>
+
+        <div class="product-stage" aria-label="应用界面示意图">
+          <div class="edge-line"></div>
+          <div class="app-card">
+            <div class="quota-ring" style="--value: 76">
+              <span>76%</span>
+            </div>
+            <div class="quota-copy">
+              <small>CODEX · 5 小时额度</small>
+              <strong>剩余额度</strong>
+              <span>2:41 后重置</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="weekly">
+              <span>周额度 <b>58%</b></span>
+              <small>4天6小时后重置</small>
+              <i>数据刚刚更新</i>
+            </div>
+            <div class="card-actions">
+              <span>◌</span><span>↻</span><span>⚙</span>
+            </div>
+          </div>
+          <div class="mini-card">
+            <div class="mini-ring"></div>
+            <b>76%</b>
+            <span>5h</span>
+          </div>
+          <div class="stage-caption">
+            <span></span>
+            拖到边缘，自动收成迷你额度环
+          </div>
+        </div>
+      </section>
+
+      <section class="trust-row" aria-label="产品特性摘要">
+        <div><strong>LOCAL</strong><span>本机 App Server</span></div>
+        <div><strong>READ ONLY</strong><span>只读账户额度</span></div>
+        <div><strong>NO TELEMETRY</strong><span>无遥测和历史记录</span></div>
+        <div><strong>TAURI 2</strong><span>Rust + React</span></div>
+      </section>
+
+      <section class="features" id="features">
+        <div class="section-heading">
+          <span>DESIGNED FOR FOCUS</span>
+          <h2>需要时出现，其余时间安静待着。</h2>
+        </div>
+        <div class="feature-grid">
+          <article>
+            <span class="feature-number">01</span>
+            <h3>双额度环</h3>
+            <p>按窗口时长准确识别 5 小时与周额度，显示剩余百分比和本地倒计时。</p>
+          </article>
+          <article>
+            <span class="feature-number">02</span>
+            <h3>贴边自动收起</h3>
+            <p>支持左、右、上边缘吸附。悬停展开完整面板，离开后自动缩回迷你环。</p>
+          </article>
+          <article>
+            <span class="feature-number">03</span>
+            <h3>Windows 原生驻留</h3>
+            <p>系统托盘、置顶、开机启动、位置锁定、多显示器与高 DPI 均已适配。</p>
+          </article>
+          <article>
+            <span class="feature-number">04</span>
+            <h3>可靠但克制</h3>
+            <p>单实例、单飞刷新、失败保留最近有效额度，不保存额度历史。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="privacy" id="privacy">
+        <div>
+          <span class="eyebrow">PRIVACY BY DEFAULT</span>
+          <h2>你的账户数据不离开电脑。</h2>
+        </div>
+        <div class="privacy-copy">
+          <p>
+            应用只调用本机 Codex App Server 的只读账户与额度接口。
+            前端只接收规范化后的额度快照。
+          </p>
+          <ul>
+            <li>不读取 Cookie、Token 或 auth.json</li>
+            <li>不读取对话、提示词或项目内容</li>
+            <li>不提供账户写操作或额度重置</li>
+            <li>不接入遥测、分析或崩溃上报</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="final-cta">
+        <img src="./mark.svg" alt="" width="44" height="44" />
+        <h2>让额度可见，但不占据注意力。</h2>
+        <p>下载 Codex Quota Ring v0.3.1，适用于 Windows 10/11 x64。</p>
+        <a class="primary-button" data-download-link href="#">下载 Windows 安装包 <span>↓</span></a>
+      </section>
+    </main>
+
+    <footer>
+      <span>Codex Quota Ring · Public-source Windows utility</span>
+      <a data-github-link href="#">GitHub Repository ↗</a>
+    </footer>
+
+    <script>
+      const repository = "https://github.com/caicai121263/codex-quota-ring";
+      const download = repository + "/releases/download/v0.3.1/Codex.Quota.Ring_0.3.1_x64-setup.exe";
+      document.querySelectorAll("[data-github-link]").forEach((link) => {
+        link.href = repository;
+      });
+      document.querySelectorAll("[data-download-link]").forEach((link) => {
+        link.href = download;
+      });
+    </script>
+  </body>
+</html>
